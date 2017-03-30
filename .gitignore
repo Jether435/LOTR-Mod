@@ -1,0 +1,21 @@
+/download
+/eclipseBin
+
+## gradle
+/.gradle
+/build
+/gradle
+/gradlew
+/gradlew.bat
+/libs
+
+## ForgeGradle
+/run
+
+## eclipse
+/eclipse
+/.settings
+/.metadata
+/.classpath
+/.project
+/bin
