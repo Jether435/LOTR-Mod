@@ -1,5 +1,5 @@
 package com.ModMayhem.LotR.Entity.AI;
 
-public class FlyingDrop {
+public class EntityAIFlyingDrop {
 // Drop Cages/Bombs
 }

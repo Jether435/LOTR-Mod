@@ -1,5 +1,13 @@
 package com.ModMayhem.LotR.Entity;
 
-public class Catapult {
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.world.World;
+
+public class Catapult extends EntityLiving {
+
+	public Catapult(World w) {
+		super(w);
+		
+	}
 
 }
