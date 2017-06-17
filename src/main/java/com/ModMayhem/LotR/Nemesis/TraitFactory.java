@@ -15,11 +15,16 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 import akka.actor.dsl.Inbox.Get;
 import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.monster.EntityMob;
 
 public class TraitFactory {
-@SuppressWarnings("null")
+public EntityMob e;
+public TraitFactory(){
+	AddTrait(e);
+}
 public static EntityAIBase MakeTrait(){
 	Random rand = null;
+	ArrayList<Object> list2 = new ArrayList<Object>();
 	ArrayList<Object> list = new ArrayList<Object>();
 	list.add(TraitList.Ambusher);
 	list.add(TraitList.ArmouredMount);
@@ -98,7 +103,19 @@ public static EntityAIBase MakeTrait(){
 	list.add(TraitList.VunerableToRanged);
 	list.add(TraitList.VunerableToStealthFinishers);
 	list.add(TraitList.Wrecker);
+	@SuppressWarnings("null")
 	Object randomAI = list.get(rand.nextInt(list.size()));
 	return (EntityAIBase) randomAI;
+	}
+public void AddTrait(EntityMob e){
+	this.e = e;
+	if(this.e.worldObj.findingSpawnPoint){
+	if(this.e.worldObj.getLoadedEntityList().contains(e));
+	if (this.e.addedToChunk){
+		this.e.tasks.addTask(1, MakeTrait());
+	}
+	}
+	//if(this.e.onSpawnWithEgg(data){	
+	//	}
 }
 }
